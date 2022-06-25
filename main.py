@@ -7,7 +7,14 @@ compGuess = random.choice(choices)
 player = None
 tie = False
 
-myGuess = input("Your choice: rock(r), paper(p), scissor(s):\n").lower()
+print("---Welcome to Rock-Paper-Scisor---")
+print("---Enjoy!!!---")
+
+ready = input("Are you fready?(y/n):\n").lower()
+if ready == 'y':
+    myGuess = input("Your choice: rock(r), paper(p), scissor(s):\n").lower()
+else:
+    quit()
 
 if myGuess == 'r':
     player = "rock"

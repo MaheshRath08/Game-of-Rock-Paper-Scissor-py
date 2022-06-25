@@ -1,33 +1,33 @@
 import random
 
-choices = ["rock", "paper", "scissor"]
+choices = ["rock", "paper", "scissor"]  
 
-compGuess = random.choice(choices)
+compGuess = random.choice(choices)  #computer's guess
 
-player = None
+player = None     #declaring the variables early 
 tie = False
 
-print("---Welcome to Rock-Paper-Scisor---")
-print("---Enjoy!!!---")
+print("---Welcome to Rock-Paper-Scisor---")  #welcome
+print("---Enjoy!!!---")                      #message
 
-ready = input("Are you fready?(y/n):\n").lower()
-if ready == 'y':
-    myGuess = input("Your choice: rock(r), paper(p), scissor(s):\n").lower()
+ready = input("Are you fready?(y/n):\n").lower()    #asking the user if he's ready or not
+if ready == 'y':                            
+    myGuess = input("Your choice: rock(r), paper(p), scissor(s):\n").lower()       
 else:
     quit()
-
+#converting user input to something comparable to the computer's guesses
 if myGuess == 'r':
     player = "rock"
 elif myGuess == 'p':
     player = "paper"
 elif myGuess == 's':
     player = "scissor"
-
+#if ties, it keeps on asking for input
 if player == compGuess:
     tie = True
     myGuess = input("Your choice: rock(r), paper(p), scissor(s):\n").lower()
 
-def game(player, compGuess):
+def game(player, compGuess):            #declairing the game function with arguments such as player and compguess
     if tie:
         print("You Guessed:", player)
         print("computer guessed:", compGuess)
@@ -54,7 +54,8 @@ def game(player, compGuess):
         elif compGuess == "rock":
             print("You lost!!!!")
 
-if player not in choices:
+if player not in choices:               #a condition to take proper user input
     myGuess = input("Your choice: rock(r), paper(p), scissor(s):\n").lower()
+    print("type either 'r', 'p' or 's'")
 else:
     game(player, compGuess)
